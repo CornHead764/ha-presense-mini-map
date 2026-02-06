@@ -1,0 +1,61 @@
+# Presence Minimap Card - Example Configuration
+#
+# Paste this into a Manual card (YAML editor) in your HA dashboard.
+#
+# Adjust x/y positions (mm from top-left of floorplan) and rotation
+# (0=up, 90=right, 180=down, 270=left) to match your sensor placements.
+#
+# Set image_width/image_height to match your floorplan's real-world
+# dimensions in millimeters. Example: 40' = 12192mm (40 x 304.8)
+
+type: custom:presence-minimap-card
+title: Presence Map
+image: /local/floor-plan.png
+image_width: 12192
+image_height: 10973
+refresh_interval: 1
+
+# Display options
+show_targets: true
+show_coverage: true
+show_zones: true
+show_occupancy_masks: true
+show_sensor_icons: true
+show_labels: true
+target_size: 100
+
+# Optional: set card_height to control rendered size (pixels)
+# card_height: 600
+
+# Optional: global color overrides
+# coverage_color: '#03a9f4'
+# mask_color: '#333333'
+# zone_colors:
+#   - '#00ff00'
+#   - '#ff00ff'
+#   - '#ffaa00'
+#   - '#ff0000'
+
+# Optional: global mirror for upside-down mounted sensors
+# mirror_x: false
+# mirror_y: false
+
+sensors:
+  # Example sensor configuration
+  - id: epl_living_room
+    name: "Living Room"
+    x: 6000
+    y: 4000
+    rotation: 180
+    scale: 1.0
+    color: '#4CAF50'
+    # mirror_x: false
+    # mirror_y: false
+
+  # Add more sensors as needed:
+  # - id: epl_bedroom
+  #   name: "Bedroom"
+  #   x: 3000
+  #   y: 7000
+  #   rotation: 0
+  #   color: '#2196F3'
