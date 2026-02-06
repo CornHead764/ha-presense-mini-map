@@ -1,5 +1,6 @@
 {
   "name": "Presence Minimap Card",
   "render_readme": true,
+  "content_in_root": true,
   "filename": "presence-minimap-card.js"
 }
